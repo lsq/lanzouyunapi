@@ -32,7 +32,7 @@ jobs:
         git clone  https://github.com/lsq/install-php.git
         cd install-php
         pwd
-        lsd
+        ls
     - name: Setup IIS
       shell: powershell
       run: |
