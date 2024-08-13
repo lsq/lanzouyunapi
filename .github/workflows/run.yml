@@ -1,4 +1,7 @@
 on:
+  push:
+    branches:
+    - main
   pull_request:
     branches:
     - main
@@ -19,4 +22,9 @@ jobs:
       run: |
         pwd
         php lanzouyunapi.php
+    - name: Setup IIS
+      shell: bash
+      run: |
+        git clone  https://github.com/lsq/lanzouyunapi
+        pwd
         
