@@ -34,6 +34,8 @@ jobs:
         pwd
         ls
         cd install-php
-        .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
+        pwd
+        ls
+        #.\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
         
         
