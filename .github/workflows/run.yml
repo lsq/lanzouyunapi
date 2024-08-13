@@ -24,6 +24,7 @@ jobs:
         Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
         scoop install lsd
         scoop install tre-command
+        echo "$(Resolve-Path "~/scoop/shims")" >> $GITHUB_PATH
         pwd
         php lanzouyunapi.php
     - name: Get Install Source
