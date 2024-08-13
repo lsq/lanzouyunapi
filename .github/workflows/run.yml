@@ -37,6 +37,7 @@ jobs:
     - name: Setup IIS
       shell: powershell
       run: |
+        Set-Item -Path Env:\Path -Value "$(Resolve-Path "~/scoop/shims");$env:Path"
         echo "$env:PATH"
         pwd
         lsd
