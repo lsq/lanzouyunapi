@@ -20,6 +20,10 @@ jobs:
         php-version: '8.3'
     - name: Test api
       run: |
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+        Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+        scoop install lsd
+        scoop install tre-command
         pwd
         php lanzouyunapi.php
     - name: Get Install Source
@@ -28,15 +32,17 @@ jobs:
         git clone  https://github.com/lsq/install-php.git
         cd install-php
         pwd
-        ls
+        lsd
     - name: Setup IIS
       shell: powershell
       run: |
+        
         pwd
-        ls
+        lsd
         cd install-php
         pwd
-        ls
+        lsd
         .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
+        tre .
         
         
