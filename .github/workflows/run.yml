@@ -22,9 +22,16 @@ jobs:
       run: |
         pwd
         php lanzouyunapi.php
-    - name: Setup IIS
+    - name: Get Install Source
       shell: bash
       run: |
-        git clone  https://github.com/lsq/lanzouyunapi
+        git clone  https://github.com/lsq/install-php.git
+        cd install-php
         pwd
+        ls
+    - name: Setup IIS
+      run: |
+        .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
+        pwd
+        ls
         
