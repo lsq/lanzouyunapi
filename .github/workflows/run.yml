@@ -1,0 +1,22 @@
+on:
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: run lanzouyunapi
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup PHP environment         
+      uses: nanasess/setup-php@v4.0.2
+      with:
+        php-version: '8.3'
+    - name: Test api
+      run: |
+        pwd
+        php lanzouyunapi.php
+        
