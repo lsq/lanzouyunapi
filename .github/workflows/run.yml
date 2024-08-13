@@ -37,7 +37,7 @@ jobs:
     - name: Setup IIS
       shell: powershell
       run: |
-        
+        echo "$env:PATH"
         pwd
         lsd
         cd install-php
