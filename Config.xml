@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<server>
+		<supported_version>2022</supported_version>
+	</server>
+	<php>
+		<version>8.3.10 NTS x64</version>
+		<filename>php-7.4.1-nts-Win32-vc15-x64.zip</filename>
+		<sha256>694FC7C80FCE6A937C98C5A6C28FA3490CD6BC0E3172B266685E8D83F447A04A</sha256>
+		<install_directory>C:\tools\php</install_directory>
+		<php_ini>php-7.4.1-nts-Win32-vc15-x64.ini</php_ini>
+		<php_ini_sha256>EA93B97F1846FA62D9CD36C9C3E92F5793E5AE171EE20233EA1C12C384D91BF4</php_ini_sha256>
+	</php>
+	<wincache>
+		<version>2.0.0.8</version>
+		<filename>php_wincache.dll</filename>
+		<sha256>4E230890C8071370047BD1C297BE9724FC80A0C32C2D308B17500AE6C70C7E15</sha256>
+	</wincache>
+	<vc_redist_x64>
+		<version>14.24.28127.4</version>
+		<filename>vc_redist.x64.exe</filename>
+		<sha256>40EA2955391C9EAE3E35619C4C24B5AAF3D17AEAA6D09424EE9672AA9372AEED</sha256>
+		<display_name>Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.24.28127</display_name>
+	</vc_redist_x64>
+	<iis>
+		<del_default_site>Yes</del_default_site>
+		<site_name>PHP</site_name>
+		<site_path>C:\WebData</site_path>
+	</iis>
+</info>
