@@ -27,6 +27,7 @@ jobs:
         echo "$(Resolve-Path "~/scoop/shims")" >> $GITHUB_PATH
         pwd
         php lanzouyunapi.php
+        php lanzouyunapi.php data=b0ufru1i
     - name: Get Install Source
       shell: bash
       run: |
