@@ -33,6 +33,7 @@ jobs:
       run: |
         git clone  https://github.com/lsq/install-php.git
         cd install-php
+        which curl
         pwd
         ls
     - name: Setup IIS
@@ -41,7 +42,7 @@ jobs:
         Set-Item -Path Env:\Path -Value "$(Resolve-Path "~/scoop/shims");$env:Path"
         Set-Item -Path Env:\Path -Value "c:\msys64\usr\bin;$env:Path"
         echo "$env:PATH"
-        which php
+        which php        
         pwd
         lsd c:\tools\php
         tre c:\tools\php        
@@ -59,7 +60,8 @@ jobs:
     - name: Setup Lanzouyun api
       shell: powershell
       run: |
-        powershell .\install-lanzouyun-api.ps1  .\Config.xml    
+        powershell .\install-lanzouyun-api.ps1  .\Config.xml
+        curl.exe "http://localhost/php/lanzouyunapi.php?data=https://www.lanzouo.com/b0ufru1i
         
         
         
