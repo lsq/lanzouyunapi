@@ -64,6 +64,7 @@ jobs:
         Set-Item -Path Env:\Path -Value "c:\msys64\usr\bin;$env:Path"
         powershell .\install-lanzouyun-api.ps1  .\Config.xml
         curl.exe 'http://localhost/php/lanzouyunapi.php?data=https://www.lanzouo.com/b0ufru1i'
+        curl.exe 'https://vercel-chi-kohl.vercel.app/lanzouyunapi.php?data=b0ufru1i'
         tre C:\WebData
         
         
