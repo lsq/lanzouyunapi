@@ -56,13 +56,15 @@ jobs:
         lsd
         powershell .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip        
         tre .
-        (curl http://localhost/php/index.php).content
-        tre C:\WebData
+        (curl http://localhost/php/index.php).content      
     - name: Setup Lanzouyun api
       shell: powershell
       run: |
+        Set-Item -Path Env:\Path -Value "$(Resolve-Path "~/scoop/shims");$env:Path"
+        Set-Item -Path Env:\Path -Value "c:\msys64\usr\bin;$env:Path"
         powershell .\install-lanzouyun-api.ps1  .\Config.xml
         curl.exe 'http://localhost/php/lanzouyunapi.php?data=https://www.lanzouo.com/b0ufru1i'
+        tre C:\WebData
         
         
         
