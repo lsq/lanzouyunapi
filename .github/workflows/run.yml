@@ -42,7 +42,7 @@ jobs:
         echo "$env:PATH"
         pwd
         lsd c:\
-        sed -i "295s/break/exit\ 0/" .\install-php\Install-PHP.ps1
+        sed -i "295s/break/return\ 0/" .\install-php\Install-PHP.ps1
         sed -n "295p" .\install-php\Install-PHP.ps1
         cd install-php
         pwd
