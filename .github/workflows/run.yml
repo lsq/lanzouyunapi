@@ -46,11 +46,14 @@ jobs:
         lsd c:\tools\php
         tre c:\tools\php        
         cd install-php
-        sed -i '295s/.*/Write-Host "Continue.."/' Install-PHP.ps1
+        sed -i '295s/.*/echo "$env:PATH"/' Install-PHP.ps1
         sed -n '295p' Install-PHP.ps1
+        sed -i '720s/-eq \(\$xml.info.vc_redist_x64.display_name\)/-like \"\*\$((\1 -replace \" - [\\\d\.]+\",\"\"))\*\"/' Install-PHP.ps1
+        sed -n '720p' Install-PHP.ps1
         pwd
         lsd
-        powershell .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
+        powershell .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip        
         tre .
+        curl http://localhost/php/index.php
         
         
