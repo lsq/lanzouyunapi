@@ -50,7 +50,7 @@ jobs:
         cd install-php
         sed -i '295s/.*/echo "$env:PATH"/' Install-PHP.ps1
         sed -n '295p' Install-PHP.ps1
-         sed -i '720s/-eq \(\$xml.info.vc_redist_x64.display_name\)/-like \"\*\$(((\1 -replace \$xml.info.server.supported_version,${{env:winVersion}}) -replace \x27 - [\\\d\.]+\x27,\x27\x27))\*\"/' Install-PHP.ps1
+        sed -i '720s/-eq \(\$xml.info.vc_redist_x64.display_name\)/-like \"\*\$(((\1 -replace \$xml.info.server.supported_version,${{ winVersion }}) -replace \x27 - [\\\d\.]+\x27,\x27\x27))\*\"/' Install-PHP.ps1
         sed -n '720p' Install-PHP.ps1
         pwd
         lsd
