@@ -61,7 +61,7 @@ jobs:
       shell: powershell
       run: |
         powershell .\install-lanzouyun-api.ps1  .\Config.xml
-        curl.exe "http://localhost/php/lanzouyunapi.php?data=https://www.lanzouo.com/b0ufru1i
+        curl.exe 'http://localhost/php/lanzouyunapi.php?data=https://www.lanzouo.com/b0ufru1i'
         
         
         
