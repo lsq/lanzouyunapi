@@ -24,6 +24,7 @@ jobs:
         Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
         scoop install lsd
         scoop install tre-command
+        scoop install sed
         echo "$(Resolve-Path "~/scoop/shims")" >> $GITHUB_PATH
         pwd
         php lanzouyunapi.php
@@ -40,7 +41,9 @@ jobs:
         Set-Item -Path Env:\Path -Value "$(Resolve-Path "~/scoop/shims");$env:Path"
         echo "$env:PATH"
         pwd
-        lsd
+        lsd c:\
+        sed -i "295s/break/exit\ 0/" .\install-php\Install-PHP.ps1
+        sed -n "295p" .\install-php\Install-PHP.ps1
         cd install-php
         pwd
         lsd
