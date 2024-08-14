@@ -44,10 +44,10 @@ jobs:
         which php
         pwd
         lsd c:\tools\php
-        tre c:\tools\php
-        sed -i '295s/break/return\ 0/' .\install-php\Install-PHP.ps1
-        sed -n '295p' .\install-php\Install-PHP.ps1
+        tre c:\tools\php        
         cd install-php
+        sed -i '295s/.*/  return\ 0/' Install-PHP.ps1
+        sed -n '295p' Install-PHP.ps1
         pwd
         lsd
         powershell .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
