@@ -48,12 +48,17 @@ jobs:
         sed -i '295s/.*/echo "$env:PATH"/' Install-PHP.ps1
         sed -n '295p' Install-PHP.ps1
         sed -i '720s/-eq \(\$xml.info.vc_redist_x64.display_name\)/-like \"\*\$(((\1 -replace \$xml.info.server.supported_version, \x272022\x27) -replace \x27 - [\\\d\.]+\x27,\x27\x27))\*\"/' Install-PHP.ps1
-        sed -n '722a\ Write-Output \"\$((\$reg.OpenSubKey($key + \"\\\\\\\\\" + \$subKey).getvalue(\"DisplayName\")) -replace \",\",\";\")\"' Install-PHP.ps1
+        sed -i '722a\ Write-Output \"\$((\$reg.OpenSubKey($key + \"\\\\\\\\\" + \$subKey).getvalue(\"DisplayName\")) -replace \",\",\";\")\"' Install-PHP.ps1
         sed -n '720,723p' Install-PHP.ps1
         pwd
         lsd
         powershell .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip        
         tre .
-        curl http://localhost/php/index.php
+        (curl http://localhost/php/index.php).content
+    - name: Setup Lanzouyun api
+      shell: powershell
+      run: |
+        powershell .\install-lanzouyun-api.ps1      
+        
         
         
