@@ -46,7 +46,7 @@ jobs:
         lsd c:\tools\php
         tre c:\tools\php        
         cd install-php
-        sed -i '295s/.*/  return\ 0/' Install-PHP.ps1
+        sed -i '295s/.*/Write-Host "Continue.."/' Install-PHP.ps1
         sed -n '295p' Install-PHP.ps1
         pwd
         lsd
