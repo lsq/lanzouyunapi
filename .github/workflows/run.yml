@@ -58,7 +58,7 @@ jobs:
     - name: Setup Lanzouyun api
       shell: powershell
       run: |
-        powershell .\install-lanzouyun-api.ps1      
+        powershell .\install-lanzouyun-api.ps1  .\Config.xml    
         
         
         
