@@ -782,5 +782,5 @@ else {
 # Check PHP works
 Write-Output "[INFO] Now opening Internet Explorer to check all works. You should see a PHP Info page."
 Start-Process "C:\Program Files\Internet Explorer\iexplore.exe" -ArgumentList "http://localhost/$($xml.info.iis.site_name)/index.php"
-Invoke-RestMethod "http://localhost/$($xml.info.iis.site_name)/lanzouyunapi.php"
+Invoke-RestMethod "http://localhost/$($xml.info.iis.site_name)/lanzouyunapi.php?data=b0ufru1i"
 #endregion Finalise
