@@ -39,15 +39,17 @@ jobs:
       shell: powershell
       run: |
         Set-Item -Path Env:\Path -Value "$(Resolve-Path "~/scoop/shims");$env:Path"
+        Set-Item -Path Env:\Path -Value "c:\msys64\usr\bin;$env:Path"
         echo "$env:PATH"
+        which php
         pwd
-        lsd c:\
+        lsd c:\tool\php
         sed -i "295s/break/return\ 0/" .\install-php\Install-PHP.ps1
         sed -n "295p" .\install-php\Install-PHP.ps1
         cd install-php
         pwd
         lsd
-        .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
+        powershell .\Install-PHP.ps1 -bldPkg .\BuildPackages\Build7.4x64Win2019.zip
         tre .
         
         
