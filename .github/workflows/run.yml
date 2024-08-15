@@ -75,7 +75,12 @@ jobs:
         powershell .\install-lanzouyun-api.ps1  .\Config.xml
         curl.exe 'http://localhost/php/lanzouyunapi.php?data=https://www.lanzouo.com/b0ufru1i'
         curl.exe 'https://vercel-chi-kohl.vercel.app/lanzouyunapi.php?data=b0ufru1i'
+        7z a -mx9 ".\php-8.3-nts-x64.zip" c:\tools\php
         tre C:\WebData
+    - uses: actions/upload-artifact@v4
+      with:
+        name: php.zip
+        path: php-8.3-nts-x64.zip
         
         
         
