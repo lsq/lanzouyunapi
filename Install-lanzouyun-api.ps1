@@ -686,9 +686,9 @@ catch {
 
 # Copy other project files
 try {
-  Write-Output "[INFO] Copying $bldDir\*.php to $(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name))"
-  Copy-Item -Path $bldDir\*.php -Destination "$(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name))" -Force -ErrorAction SilentlyContinue
-  Write-Output "[INFO] Copied $bldDir\*.php to $(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name))"
+  Write-Output "[INFO] Copying $PSScriptRoot\*.php to $(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name))"
+  Copy-Item -Path $PSScriptRoot\*.php -Destination "$(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name))" -Force -ErrorAction SilentlyContinue
+  Write-Output "[INFO] Copied $PSScriptRoot\*.php to $(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name))"
 }
 catch {
   Write-Output "[ERROR] Unable to copy $bldDir\*.php to $(($xml.info.iis.site_path) + "\" + $($xml.info.iis.site_name)). Script terminated."
