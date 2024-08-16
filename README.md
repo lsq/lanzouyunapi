@@ -1,3 +1,4 @@
+[![.github/workflows/run.yml](https://github.com/lsq/lanzouyunapi/actions/workflows/run.yml/badge.svg)](https://github.com/lsq/lanzouyunapi/actions/workflows/run.yml)
 # 蓝奏云解析API
 蓝奏云解析，支持获取：文件名、分享者、文件大小、描述、文件链接、文件直链
 
